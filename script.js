@@ -1,4 +1,5 @@
 const loomImages = [
+    'Looms/ChatGPT Image Nov 1, 2025, 05_18_25 AM.png', // Default image
     'Looms/ChatGPT Image Nov 1, 2025, 03_09_33 AM.png',
     'Looms/ChatGPT Image Nov 1, 2025, 03_10_26 AM.png',
     'Looms/ChatGPT Image Nov 1, 2025, 03_12_19 AM.png',
@@ -101,7 +102,23 @@ function updateLoomImage(userInput = null) {
 }
 
 function initializeLoom() {
-    updateLoomImage(); // Initial random image
+    // Show default image (first in array) on initial load
+    const loomContainer = document.querySelector('.loom-container');
+    if (!loomContainer) return;
+    
+    const img = document.createElement('img');
+    img.src = loomImages[0]; // Always use first image as default
+    img.alt = 'The Loom of Echoes';
+    img.className = 'loom-image loom-image-hidden';
+    loomContainer.appendChild(img);
+    
+    // reveal 
+    img.onload = () => {
+        setTimeout(() => {
+            img.classList.remove('loom-image-hidden');
+            img.classList.add('loom-image-revealed');
+        }, 100);
+    };
 }
 
 function handleUserQuestion() {
