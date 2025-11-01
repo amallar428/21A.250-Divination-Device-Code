@@ -187,8 +187,9 @@ body {
 
 .lore-color {
     width: 100%;
-    height: 4px;
-    border-radius: 2px;
+    height: 6px;
+    border-radius: 3px;
     margin-bottom: 1rem;
     background: linear-gradient(90deg, #d9c2e8, #afd5ed);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
