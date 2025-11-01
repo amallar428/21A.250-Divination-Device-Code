@@ -5,21 +5,21 @@
 }
 
 :root {
-    --gold: #d4af37;
-    --crimson: #dc143c;
-    --silver: #c0c0c0;
-    --pale-blue: #b0c4de;
-    --bronze: #cd7f32;
-    --dark-bg: #0a0a0f;
-    --card-bg: #1a1a24;
-    --text-primary: #e8e8f0;
-    --text-secondary: #a8a8b8;
-    --accent: #4a9eff;
+    --gold: #f9d5a7;
+    --crimson: #ffb3c1;
+    --silver: #e8d5f2;
+    --pale-blue: #c5e3f6;
+    --bronze: #f4c2a7;
+    --dark-bg: #fef9f5;
+    --card-bg: #fff5f8;
+    --text-primary: #6b5b7a;
+    --text-secondary: #9b8ba8;
+    --accent: #b8d4f1;
 }
 
 body {
     font-family: 'Georgia', 'Times New Roman', serif;
-    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+    background: linear-gradient(135deg, #fef9f5 0%, #f5e8f0 50%, #e8f3f8 100%);
     color: var(--text-primary);
     min-height: 100vh;
     line-height: 1.6;
@@ -42,12 +42,12 @@ body {
     font-size: 3rem;
     font-weight: 300;
     letter-spacing: 0.1em;
-    background: linear-gradient(135deg, var(--gold), var(--bronze));
+    background: linear-gradient(135deg, #f4a4c0, #c5a3d9, #a8d8ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    filter: drop-shadow(0 2px 8px rgba(244, 164, 192, 0.3));
 }
 
 .subtitle {
