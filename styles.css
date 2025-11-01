@@ -90,3 +90,42 @@ body {
     opacity: 1;
     transform: scale(1);
 }
+
+/* Controls */
+.controls {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.btn {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ffaab8, #d9c2e8);
+    color: #1a1625;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ffc0cb, #e8d5f2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 170, 184, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-text {
+    display: inline-block;
+}

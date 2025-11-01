@@ -5,14 +5,31 @@ const loomImages = [
 ];
 // ^^images generated at the witching hour for maximum potency
 
-function getSeededIndex() {
+// Convert string to numeric seed
+function stringToSeed(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // convert to 32bit 
+    }
+    return Math.abs(hash);
+}
+
+function getSeededIndex(userInput = null) {
     const now = Date.now();
-    const seed = now + (performance.now() * 1000);
+    let seed = now + (performance.now() * 1000);
+    
+    // incorperate user input into the seed
+    if (userInput && userInput.trim()) {
+        const inputSeed = stringToSeed(userInput.toLowerCase().trim());
+        seed = seed + inputSeed * 1000; // Weight user input heavily, for max divination
+    }
     
     // Powerful numbers for hash distribution, I mean to enhance divination
     const THE_MEANING_OF_LIFE = 42;      
     const THIRD_TIME_CHARM = 3;       
-    const ANGEL_NUMBER = 29.530588;  
+    const ANGEL_NUMBER = 444;  
     const LUCKY_SEVEN = 7;         
 
     // randomization with mystical numbers
@@ -37,13 +54,20 @@ function getSeededIndex() {
     return Math.floor(cosmic * loomImages.length);
 }
 
-function initializeLoom() {
+function updateLoomImage(userInput = null) {
     const loomContainer = document.querySelector('.loom-container');
     if (!loomContainer) return;
     
     // Get mystically seeded index
-    const selectedIndex = getSeededIndex();
+    const selectedIndex = getSeededIndex(userInput);
     
+    // Remove old image if exists
+    const oldImg = loomContainer.querySelector('.loom-image');
+    if (oldImg) {
+        oldImg.remove();
+    }
+    
+    // Create new image
     const img = document.createElement('img');
     img.src = loomImages[selectedIndex];
     img.alt = 'The Loom of Echoes';
@@ -59,4 +83,37 @@ function initializeLoom() {
     };
 }
 
-document.addEventListener('DOMContentLoaded', initializeLoom);
+function initializeLoom() {
+    updateLoomImage(); // Initial random image
+}
+
+function handleUserQuestion() {
+    const userQuestion = prompt("Speak your question to the Loom:");
+    
+    if (userQuestion && userQuestion.trim()) {
+        updateLoomImage(userQuestion);
+        
+        // Optional: Display the question
+        const interpretationContent = document.getElementById('interpretationContent');
+        if (interpretationContent) {
+            interpretationContent.innerHTML = `
+                <p style="font-style: italic; color: var(--text-secondary);">
+                    "${userQuestion}"
+                </p>
+                <p style="margin-top: 1rem;">
+                    The threads weave in response to your question...
+                </p>
+            `;
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeLoom();
+    
+    // button handler
+    const recordBtn = document.getElementById('recordBtn');
+    if (recordBtn) {
+        recordBtn.addEventListener('click', handleUserQuestion);
+    }
+});
