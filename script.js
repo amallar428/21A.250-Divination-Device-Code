@@ -1,7 +1,24 @@
 const loomImages = [
-    'ChatGPT Image Nov 1, 2025, 03_09_33 AM.png',
-    'ChatGPT Image Nov 1, 2025, 03_10_26 AM.png',
-    'ChatGPT Image Nov 1, 2025, 03_12_19 AM.png'
+    'Looms/ChatGPT Image Nov 1, 2025, 03_09_33 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_10_26 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_12_19 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_15_29 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_22_38 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_24_39 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_36_28 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_41_33 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_55_53 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 03_57_36 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_01_57 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_03_30 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_05_27 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_30_58 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_32_44 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_34_38 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_36_20 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_38_07 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_39_33 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 04_45_54 AM.png'
 ];
 // ^^images generated at the witching hour for maximum potency
 
