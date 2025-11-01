@@ -5,16 +5,9 @@
 }
 
 :root {
-    --gold: #f5c98d;
-    --crimson: #ffaab8;
-    --silver: #d9c2e8;
-    --pale-blue: #afd5ed;
-    --bronze: #ebb89d;
-    --dark-bg: #1a1625;
     --card-bg: #252033;
     --text-primary: #e8d5f2;
     --text-secondary: #c5b3d9;
-    --accent: #afd5ed;
 }
 
 body {
@@ -128,17 +121,4 @@ body {
 
 .btn-text {
     display: inline-block;
-}
-
-/* Interpretation Panel */
-.interpretation-panel {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 1rem;
-    padding: 0rem;
-}
-
-.interpretation-content {
-    color: var(--text-secondary);
-    line-height: 1.6;
 }

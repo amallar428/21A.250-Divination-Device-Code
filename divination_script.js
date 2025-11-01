@@ -130,19 +130,6 @@ function handleUserQuestion() {
     
     if (userQuestion && userQuestion.trim()) {
         updateLoomImage(userQuestion);
-        
-        // Optional: Display the question
-        const interpretationContent = document.getElementById('interpretationContent');
-        if (interpretationContent) {
-            interpretationContent.innerHTML = `
-                <p style="font-style: italic; color: var(--text-secondary);">
-                    "${userQuestion}"
-                </p>
-                <p style="margin-top: 1rem;">
-                    The threads weave in response to your question...
-                </p>
-            `;
-        }
     }
 }
 
