@@ -39,10 +39,10 @@ function stringToSeed(str) {
 }
 
 function getSeededIndex(userInput = null) {
-    const now = Date.now();
+    const now = Date.now(); // the present moment is powerful
     let seed = now + (performance.now() * 1000);
     
-    // incorperate user input into the seed
+    // incorperate user query into the seed
     if (userInput && userInput.trim()) {
         const inputSeed = stringToSeed(userInput.toLowerCase().trim());
         seed = seed + inputSeed * 1000; // Weight user input heavily, for max divination
@@ -58,7 +58,8 @@ function getSeededIndex(userInput = null) {
     let hash = seed;
     hash = ((hash << THIRD_TIME_CHARM) - hash) + (seed % THE_MEANING_OF_LIFE);
     hash = hash & hash;
-    hash = (hash * LUCKY_SEVEN) % (THE_MEANING_OF_LIFE * 13); 
+    hash = hash * LUCKY_SEVEN + ANGEL_NUMBER;
+    hash = ((hash << 13) ^ hash) >>> 0; // Additional mixing for better divinitive distribution
     
     // Golden ratio - divine proportion
     const phi = 1.618033988749895;
@@ -67,13 +68,15 @@ function getSeededIndex(userInput = null) {
     const delta = 2.414213562373095;
     
     // some trigonometric mysticism
-    const cosmic = Math.abs(
-        Math.sin(hash * phi) * 
-        Math.cos(hash / delta) * 
-        (1 + Math.sin(seed / ANGEL_NUMBER))
-    );
+    // Use sine with golden ratio for uniform distribution
+    // The fractional part of sin(large_number) is uniformly distributed
+    const cosmic = Math.abs(Math.sin(hash * phi) * Math.cos(hash * delta));
     
-    return Math.floor(cosmic * loomImages.length);
+    // Map to uniform [0,1) range using fractional part
+    const cosmic_fraction = (cosmic * 10000) % 1;
+    
+    // Exclude index 0 (default image) from fate results
+    return Math.floor(cosmic_fraction * (loomImages.length - 1)) + 1;
 }
 
 function updateLoomImage(userInput = null) {
@@ -83,7 +86,7 @@ function updateLoomImage(userInput = null) {
     // Get mystically seeded index
     const selectedIndex = getSeededIndex(userInput);
     
-    // Remove old image if exists
+    // remove old image if exists
     const oldImg = loomContainer.querySelector('.loom-image');
     if (oldImg) {
         oldImg.remove();
@@ -102,6 +105,15 @@ function updateLoomImage(userInput = null) {
             img.classList.remove('loom-image-hidden');
             img.classList.add('loom-image-revealed');
         }, 100);
+    };
+    
+    // for image load errors
+    img.onerror = () => {
+        console.error(`Failed to load loom image: ${loomImages[selectedIndex]}`);
+        // loading default image as fallback
+        if (selectedIndex !== 0) {
+            img.src = loomImages[0];
+        }
     };
 }
 
