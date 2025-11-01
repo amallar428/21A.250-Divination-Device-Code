@@ -19,7 +19,11 @@ const loomImages = [
     'Looms/ChatGPT Image Nov 1, 2025, 04_36_20 AM.png',
     'Looms/ChatGPT Image Nov 1, 2025, 04_38_07 AM.png',
     'Looms/ChatGPT Image Nov 1, 2025, 04_39_33 AM.png',
-    'Looms/ChatGPT Image Nov 1, 2025, 04_45_54 AM.png'
+    'Looms/ChatGPT Image Nov 1, 2025, 04_45_54 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 05_08_31 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 05_37_05 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 05_39_49 AM.png',
+    'Looms/ChatGPT Image Nov 1, 2025, 05_49_11 AM.png'
 ];
 // ^^images generated at the witching hour for maximum potency
 
